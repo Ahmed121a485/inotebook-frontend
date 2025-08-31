@@ -1,0 +1,27 @@
+/* Gradient background */
+.custom-navbar {
+  background: linear-gradient(90deg, #1f1c2c, #928dab);
+}
+
+/* Navbar text */
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: white !important;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.custom-navbar .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* Active nav */
+.active-nav {
+  color: #ffc107 !important;
+  border-bottom: 2px solid #ffc107;
+}
+
+/* Toggler icon fix (white bars) */
+.navbar-toggler-icon {
+  filter: invert(1);
+}

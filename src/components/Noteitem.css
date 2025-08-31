@@ -1,0 +1,27 @@
+/* Card styling */
+.note-card {
+  border-radius: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon styling */
+.action-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.action-icon:hover {
+  transform: scale(1.2);
+  color: #0d6efd !important; /* Bootstrap primary color */
+}
+
+.text-danger:hover {
+  color: #dc3545 !important; /* Bootstrap danger color */
+}

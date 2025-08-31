@@ -1,0 +1,36 @@
+/* Section title */
+.section-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #333;
+  border-bottom: 3px solid #0d6efd;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+/* Modal modern look */
+.modern-modal {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.modern-modal .modal-header {
+  background: #f8f9fa;
+  border-bottom: none;
+}
+
+.modern-modal .modal-footer {
+  border-top: none;
+  background: #f8f9fa;
+}
+
+/* Note card animation */
+.note-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

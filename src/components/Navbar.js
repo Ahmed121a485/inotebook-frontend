@@ -18,7 +18,7 @@ useEffect(() => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/getUser", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/getUser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

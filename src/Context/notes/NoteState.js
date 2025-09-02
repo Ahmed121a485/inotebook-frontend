@@ -3,7 +3,7 @@ import noteContext from "./noteContext";
 import { toast } from "react-toastify";
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000";
+  const host = process.env.REACT_APP_API_URL || "http://localhost:5000";
   const notesinitial = [];
   const [notes, setnotes] = useState(notesinitial);
 

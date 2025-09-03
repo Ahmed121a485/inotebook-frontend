@@ -31,7 +31,7 @@ const Signup = () => {
     try {
       const { name, email, password } = formData;
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/createuser`, {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },

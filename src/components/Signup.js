@@ -38,7 +38,17 @@ const Signup = () => {
         body: JSON.stringify({ name, email, password })
       });
 
-      const json = await response.json();
+      const text = await response.text();
+console.log("Raw response:", text);
+let json;
+try {
+  json = JSON.parse(text);
+} catch {
+  console.error("Response was not JSON:", text);
+  toast.error("Backend did not return JSON.");
+  return;
+}
+
       
 
       if (json.success) {

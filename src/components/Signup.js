@@ -39,6 +39,8 @@ const Signup = () => {
       });
 
       const text = await response.text();
+      console.log("Signup request URL:", `${process.env.REACT_APP_API_URL}/api/auth/createuser`);
+
 console.log("Raw response:", text);
 let json;
 try {

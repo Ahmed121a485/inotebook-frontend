@@ -82,7 +82,7 @@ const About = () => {
         <p className="text-muted fs-5">
           Sign up today and keep your thoughts safe, organized, and accessible everywhere.
         </p>
-        <a href="/signup" className="btn btn-lg btn-primary rounded-pill shadow">
+        <a href="/Signup" className="btn btn-lg btn-primary rounded-pill shadow">
           Get Started
         </a>
       </div>

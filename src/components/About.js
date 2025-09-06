@@ -75,17 +75,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      {/* Call to Action */}
-      <div className="text-center mt-5">
-        <h2 className="fw-bold text-dark">🚀 Ready to get started?</h2>
-        <p className="text-muted fs-5">
-          Sign up today and keep your thoughts safe, organized, and accessible everywhere.
-        </p>
-        <a href="/Signup" className="btn btn-lg btn-primary rounded-pill shadow">
-          Get Started
-        </a>
-      </div>
     </div>
   );
 };

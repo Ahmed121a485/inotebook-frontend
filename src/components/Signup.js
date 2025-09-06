@@ -19,10 +19,9 @@ const Signup = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ✅ Check if passwords match
     if (formData.password !== formData.confirmPassword) {
       toast.error('Passwords do not match');
       return;
@@ -30,7 +29,14 @@ const Signup = () => {
 
     try {
       const { name, email, password } = formData;
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/createuser`, {
+
+      // ✅ Ensure no trailing slash in the base URL
+      const baseUrl = process.env.REACT_APP_API_URL.replace(/\/$/, "");
+      const url = `${baseUrl}/api/auth/createuser`;
+
+      console.log("Signup request URL:", url);
+
+      const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,22 +45,18 @@ const Signup = () => {
       });
 
       const text = await response.text();
-      console.log("Signup request URL:", `${process.env.REACT_APP_API_URL}/api/auth/createuser`);
+      console.log("Raw response:", text);
 
-console.log("Raw response:", text);
-let json;
-try {
-  json = JSON.parse(text);
-} catch {
-  console.error("Response was not JSON:", text);
-  toast.error("Backend did not return JSON.");
-  return;
-}
-
-      
+      let json;
+      try {
+        json = JSON.parse(text);
+      } catch {
+        console.error("Response was not JSON:", text);
+        toast.error("Backend did not return JSON.");
+        return;
+      }
 
       if (json.success) {
-        // ✅ Save token and redirect
         localStorage.setItem('token', json.JwtToken);
         toast.success("Account created successfully");
         navigate("/home");
@@ -66,6 +68,7 @@ try {
       toast.error("Something went wrong. Please try again later.");
     }
   };
+
 
   return (
     <div className="container mt-5">
